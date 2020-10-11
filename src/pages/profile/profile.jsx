@@ -5,6 +5,7 @@ import {saveUserInfo} from '@/store/action'
 import {connect} from 'react-redux'
 import API from '../../api/api'
 import QueueAnim from 'rc-queue-anim'
+import {Link} from 'react-router-dom'
 class Profile extends Component {
   static propTypes = {
     userInfo: PropTypes.object.isRequired,
@@ -29,6 +30,9 @@ class Profile extends Component {
     }
     this.setState(newState)
   }
+  handleClick= (type) => {
+    
+  }
   componentDidMount () {
     if (!this.props.userInfo.user_id) {
       this.getUserInfo()
@@ -43,10 +47,59 @@ class Profile extends Component {
   }
   render() {
     return (
-      <div className="profile-container">
-        <QueueAnim type="bottom">
-          <section key="s2">
-            
+      <div className='profile-container'>
+        <QueueAnim type='bottom'>
+          <section key='s2'>
+            <section className='profile-number'>
+              <Link
+                className='profile-link' 
+                to={this.props.userInfo&& this.props.userInfo.user_id?'/info':'/login'}
+              >
+                <img src={this.state.imgpath} alt='img is wrong' className='private-image' />
+                <div>{this.state.username}</div>
+              </Link>
+            </section>
+            <section className='order-data' key='order'>
+              <Link to='' className='my-order'>
+                <div className='icon-dingdan'>我的订单</div>
+                <div className='icon-arrow-right'>查看全部订单</div>
+              </Link>
+              <div className='clear'>
+                <Link to='' className='info-data-link'>
+                  <span className='icon-jifen1'></span>
+                  <span className='info-data-bottom'>待付款</span>
+                </Link>
+                <Link to='' className='info-data-link'>
+                  <span className='icon-jifen1'></span>
+                  <span className='info-data-bottom'>待收货</span>
+                </Link>
+                <Link to='' className='info-data-link'>
+                  <span className='icon-jifen1'></span>
+                  <span className='info-data-bottom'>待安装</span>
+                </Link>
+                <Link to='' className='info-data-link'>
+                  <span className='icon-jifen1'></span>
+                  <span className='info-data-bottom'>待评价</span>
+                </Link>
+                <Link to='' className='info-data-link'>
+                  <span className='icon-jifen1'></span>
+                  <span className='info-data-bottom'>退货</span>
+                </Link>
+              </div>
+            </section>
+            <section className='profile-list'>
+              <QueueAnim delay={400}>
+                <div 
+                  className='profile-item'
+                  key='i1'
+                  onClick={this.handleClick.bind(this, 'unfinished')}>
+                  <div className='item-left'>
+                    <div className='icon-dingdan order-icon'></div>
+                    <div className='item-text'>购物车</div>
+                  </div>
+                </div>
+              </QueueAnim>
+            </section>
           </section>
         </QueueAnim>
       </div>
