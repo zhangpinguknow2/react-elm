@@ -93,7 +93,7 @@ class Profile extends Component {
       <QueueAnim type='bottom'>
         <Header title="我的" goBack={this.goBack}  key='s1'/>
         <section  key='s2'>
-            <section className='profile-number' >
+            <section className='profile-number'>
               <Link to={this.props.userInfo&&this.props.userInfo.user_id?'/info':'/login'} className='profile-link'>
                 <img src={this.props.userInfo.imgpath} alt='img is wrong' className='private-image'/>
                 <div className='user-info'>
@@ -123,45 +123,45 @@ class Profile extends Component {
                 </Link>
               </ul>
             </section>
-          <section className='profile-list'>
-          <QueueAnim deley='0.4'>          
-            <div onClick={this.handleClick.bind(this, 'unfinished')} className='myorder' key='i2'>
-              <div className='icon-dingdan order-icon'></div>
-              <div className='myorder-text'>
-                <span>我的订单</span>
-                <div className='icon-arrow-right'></div>
-              </div>
-            </div>
-            <a href="https://home.m.duiba.com.cn/#/chome/index" className='myorder' key='i3'>
-              <div className='icon-jifen1 order-icon'></div>
-              <div className='myorder-text'>
-                <span>积分商城</span>
-                <div className='icon-arrow-right'></div>
-              </div>
-            </a>
-            <div onClick={this.handleClick.bind(this, 'unfinished')} className='myorder' key='i4' >
-              <div className='icon-huangguan order-icon'></div>
-              <div className='myorder-text'>
-                <span>饿了么会员卡</span>
-                <div className='icon-arrow-right'></div>
-              </div>
-            </div>
-            <div onClick={this.handleClick.bind(this, 'unfinished')} className='myorder' key='i5'>
-              <div className='icon-yk_fangkuai_fill order-icon'></div>
-              <div className='myorder-text'>
-                <span>服务中心</span>
-                <div className='icon-arrow-right'></div>
-              </div>
-            </div>
-            <div  onClick={this.handleClick.bind(this, 'download')} className='myorder' key='i6'>
-              <div className='icon-changyonglogo40 order-icon'></div>
-              <div className='myorder-text'>
-                <span>下载饿了么APP</span>
-                <div className='icon-arrow-right'></div>
-              </div>
-            </div>
-        </QueueAnim>
-          </section>
+            <section className='profile-list'>
+                <QueueAnim deley='0.4'>          
+                  <div onClick={this.handleClick.bind(this, 'unfinished')} className='myorder' key='i2'>
+                    <div className='icon-dingdan order-icon'></div>
+                    <div className='myorder-text'>
+                      <span>我的订单</span>
+                      <div className='icon-arrow-right'></div>
+                    </div>
+                  </div>
+                  <a href="https://home.m.duiba.com.cn/#/chome/index" className='myorder' key='i3'>
+                    <div className='icon-jifen1 order-icon'></div>
+                    <div className='myorder-text'>
+                      <span>积分商城</span>
+                      <div className='icon-arrow-right'></div>
+                    </div>
+                  </a>
+                  <div onClick={this.handleClick.bind(this, 'unfinished')} className='myorder' key='i4' >
+                    <div className='icon-huangguan order-icon'></div>
+                    <div className='myorder-text'>
+                      <span>饿了么会员卡</span>
+                      <div className='icon-arrow-right'></div>
+                    </div>
+                  </div>
+                  <div onClick={this.handleClick.bind(this, 'unfinished')} className='myorder' key='i5'>
+                    <div className='icon-yk_fangkuai_fill order-icon'></div>
+                    <div className='myorder-text'>
+                      <span>服务中心</span>
+                      <div className='icon-arrow-right'></div>
+                    </div>
+                  </div>
+                  <div  onClick={this.handleClick.bind(this, 'download')} className='myorder' key='i6'>
+                    <div className='icon-changyonglogo40 order-icon'></div>
+                    <div className='myorder-text'>
+                      <span>下载饿了么APP</span>
+                      <div className='icon-arrow-right'></div>
+                    </div>
+                  </div>
+              </QueueAnim>
+            </section>
         </section>
         <Footer key='s3'/>
         </QueueAnim>
