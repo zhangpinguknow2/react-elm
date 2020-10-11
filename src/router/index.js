@@ -12,6 +12,7 @@ const technology = asyncComponent(() => import("@/pages/technology/technology"))
 
 export default class RouteConfig extends Component {
   render () {
+    /*exact: bool, 为true, 要精准匹配，path同location.pathname完全一致*/
     return (
       <HashRouter>
         <Switch>

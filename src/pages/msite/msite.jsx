@@ -76,6 +76,7 @@ class Msite extends Component {
     this.props.history.push('/')
   }
   componentDidMount () {
+    console.log(9992, this.props)
     this.cityGuess()
   }
   shouldComponentUpdate(nextProps, nextState) {   // 判断是否要更新render, return true 更新  return false不更新

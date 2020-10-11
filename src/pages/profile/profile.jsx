@@ -62,7 +62,9 @@ class Profile extends Component {
   // 获取用户信息
   getUserInfo = async () => {
     let userInfo = await API.getUser({user_id: getStore('user_id')})
+    console.log(7744, userInfo)
     userInfo.imgpath = userInfo.avatar.indexOf('/') !== -1? '/img/' + userInfo.avatar:getImgPath()
+    console.log(667, this.props)
     this.props.saveUserInfo(userInfo)
     this.initData()  
   }
@@ -70,6 +72,7 @@ class Profile extends Component {
     this.props.history.goBack()
   }
   componentDidMount () {
+    console.log(88, this.props)
     if (!this.props.userInfo.user_id) {
       this.getUserInfo()
     } else {
